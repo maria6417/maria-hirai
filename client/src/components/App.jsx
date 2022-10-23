@@ -1,9 +1,14 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import Header from './Header';
+import About from './About';
+import { theme } from './styles';
+
 export default function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Header />
-    </div>
+      <About />
+    </ThemeProvider>
   )
 }
