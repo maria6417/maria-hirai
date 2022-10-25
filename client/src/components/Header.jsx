@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../assets/m.png';
+import { Button } from './styles';
 
 export default function Header() {
   return (
@@ -80,17 +81,4 @@ const Links = styled.ol`
 
 const Span = styled.span`
   color: ${(props) => props.theme.main};
-`;
-
-const Button = styled.button`
-  background-color: white;
-  color: ${(props) => props.theme.main};
-  border: ${(props) => `1px solid ${props.theme.main}`};
-  border-radius: 5px;
-  padding: 10px;
-  margin: 0 5px;
-  &:hover {
-    opacity: 0.5;
-    cursor: pointer;
-  }
 `;
