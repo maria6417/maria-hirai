@@ -1,14 +1,21 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import ScrollReveal from 'scrollreveal';
 import maria from '../assets/maria.png';
 import arrow from '../assets/arrow.png';
 import { Section, Title, ColoredSpan, BulletPoint } from './styles';
 
 export default function About() {
+  const revealContainer = useRef(null);
   const techStack = ['Javascript', 'ReactJS', 'Node.js', 'Express.js', 'PostgreSQL', 'MongoDB', 'AWS'];
+
+  useEffect(() => {
+    ScrollReveal().reveal(revealContainer.current);
+  }, []);
+
   return (
-    <Section>
+    <Section ref={revealContainer}>
       <Title>
         <ColoredSpan>01. </ColoredSpan>
         About Me
