@@ -44,3 +44,9 @@ export const ColoredSpan = styled.span`
   color: ${(props) => props.theme.main};
   font-size: ${(props) => (props.size ? props.size : 'inherit')};
 `;
+
+export const BulletPoint = styled.img`
+  width: ${(props) => (props.size ? props.size : '30px')};
+  height: ${(props) => (props.size ? props.size : '30px')};
+  margin-right: 10px;
+`;
