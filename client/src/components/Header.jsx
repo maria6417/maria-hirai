@@ -7,7 +7,6 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Nav>
-        <Logo src={logo} />
         <Flex>
           <Links>
             <LinkItem href="">
@@ -23,8 +22,9 @@ export default function Header() {
               Works
             </LinkItem>
           </Links>
-          <Button type="button">Resume</Button>
         </Flex>
+        <Logo src={logo} />
+        <Button type="button">Resume</Button>
       </Nav>
     </HeaderContainer>
   );
@@ -40,12 +40,13 @@ const HeaderContainer = styled.header`
   z-index: 11;
   height: 100px;
   width: 100%;
+  color: ${(props) => props.theme.dark};
 `;
 
 const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  justify-items: center;
   width: 100%;
   position: relative;
 `;
@@ -62,7 +63,6 @@ const Flex = styled.div`
 `;
 
 const LinkItem = styled.li`
-  color: black;
   padding: 10px;
   margin: 0 5px;
   &:hover {

@@ -4,14 +4,16 @@ import styled from 'styled-components';
 import ScrollReveal from 'scrollreveal';
 import maria from '../assets/maria.png';
 import arrow from '../assets/arrow.png';
-import { Section, Title, ColoredSpan, BulletPoint } from './styles';
+import { Section, Title, ColoredSpan, BulletPoint, Button } from './styles';
+import { containerRevealOptions } from '../utils/reveal';
+
 
 export default function About() {
   const revealContainer = useRef(null);
   const techStack = ['Javascript', 'ReactJS', 'Node.js', 'Express.js', 'PostgreSQL', 'MongoDB', 'AWS'];
 
   useEffect(() => {
-    ScrollReveal().reveal(revealContainer.current);
+    ScrollReveal().reveal(revealContainer.current, containerRevealOptions);
   }, []);
 
   return (
@@ -21,10 +23,13 @@ export default function About() {
         About Me
       </Title>
       <FlexRow>
-        <ProfilePic src={maria} alt="maria hirai" />
+        <div>
+          <ProfilePic src={maria} alt="maria hirai" />
+          <BiggerButton type="button">Say Hi</BiggerButton>
+        </div>
         <Desc>
           <p>
-            Hi there!👋 My name is Maria Hirai and I am a passionate software engineer that loves creating modern UI applications and exceptional user experience. I have previously worked at Oracle as a technical consultant, dealing with various cloud infrastructures and systems of clients all over Japan. I enjoyed learning so many new technology throughout my years there, and has reinforced my passion in technology, specifically in coding.
+            Hi there!👋 My name is Maria Hirai and I am a software engineer transitioned from consulting, and loves creating modern UI applications and exceptional user experience.
           </p>
           <br />
           <p>
@@ -66,4 +71,8 @@ const Desc = styled.div`
 const Grid = styled.ul`
   display: grid;
   grid-template-columns: 50% 50%;
+`;
+
+const BiggerButton = styled(Button)`
+  padding: 10px 30px;
 `;
