@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import App from './App';
+import Header from './Header';
 
 test('Does not explode', () => {
-  render(<App />);
+  render(<Header />);
 });

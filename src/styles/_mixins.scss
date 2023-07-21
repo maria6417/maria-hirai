@@ -1,0 +1,206 @@
+@use '_variables' as *;
+@use '_colors' as *;
+
+// TYPOGRAPHIC
+@mixin title-h1 {
+  font-size: 9.6rem;
+  font-weight: 700;
+  line-height: 0.85;
+
+  @media (max-width: $container-width-min) {
+    font-size: 5rem;
+  }
+
+  @media (max-width: $container-width-min * 0.66) {
+    font-size: 3.5rem;
+  }
+}
+
+@mixin title-h2 {
+  font-size: 5.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  @media (max-width: $container-width-min) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: $container-width-min * 0.66) {
+    font-size: 2.4rem;
+  }
+}
+
+@mixin title-h3 {
+  font-size: 4.8rem;
+  font-weight: 500;
+  line-height: 1.36;
+
+  @media (max-width: $container-width-min) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: $container-width-min * 0.66) {
+    font-size: 2.2rem;
+  }
+}
+
+@mixin title-h4 {
+  font-size: 3.4rem;
+  font-weight: 400;
+  line-height: 1.2;
+
+  @media (max-width: $container-width-min) {
+    font-size: 2.4rem;
+  }
+
+  @media (max-width: $container-width-min * 0.66) {
+    font-size: 2rem;
+  }
+}
+
+@mixin title-h5 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  @media (max-width: $container-width-min) {
+    font-size: 1.6rem;
+  }
+}
+
+@mixin title-h6 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 27.24px;
+
+  @media (max-width: $container-width-min) {
+    font-size: 1.4rem;
+  }
+}
+
+@mixin subtitle-1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.36;
+}
+
+@mixin subtitle-2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.36;
+}
+
+@mixin body-1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@mixin body-2 {
+  @include subtitle-2;
+}
+
+@mixin text-reset {
+  font-size: 1.6rem;
+  line-height: 1.5;
+
+  h2,
+  h3,
+  h4 {
+    margin-block-end: 1.5rem;
+
+    &:not(:first-child) {
+      margin-block-start: 4rem;
+    }
+  }
+
+  h2 {
+    @include title-h5;
+  }
+  h3 {
+    @include title-h6;
+  }
+  h4 {
+    font-weight: 700;
+  }
+
+  li,
+  p,
+  td,
+  th {
+    font-size: inherit;
+    margin-block-end: 1.5em;
+  }
+
+  iframe,
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  iframe {
+    aspect-ratio: 16/9;
+    border: 1px solid rgba($color-main, 0.1);
+    height: auto;
+    margin-block-end: 1.5em;
+    width: 100%;
+  }
+
+  ol,
+  ul {
+    margin-inline-start: 4rem;
+  }
+
+  ol > li {
+    counter-increment: revert;
+    list-style: decimal;
+
+    ol li {
+      counter-increment: revert;
+      list-style: lower-roman;
+    }
+  }
+
+  ul li {
+    list-style: none;
+    position: relative;
+
+    &::before {
+      background-color: $color-main;
+      border-radius: 50%;
+      content: '';
+      height: 1em;
+      inset-block-start: 50%;
+      inset-inline-start: -4rem;
+      position: absolute;
+      transform: translateY(-50%);
+      width: 1em;
+    }
+
+    ul li {
+      background-color: transparent;
+      border: 1px solid $color-main;
+    }
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  blockquote {
+    border-inline-start: 2px solid rgba($color-main, 0.1);
+    font-family: inherit;
+    font-size: 1.8rem;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+  }
+
+  figure {
+    div > &,
+    section > &,
+    article > & {
+      margin-block-end: 1.5em;
+    }
+  }
+}

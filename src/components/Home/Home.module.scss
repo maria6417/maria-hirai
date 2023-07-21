@@ -1,0 +1,28 @@
+@use '../../styles/utils' as *;
+
+.home {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 80px);
+  justify-content: center;
+  margin-inline: 3rem;
+}
+
+.profilePic {
+  /* margin: auto; */
+}
+
+.profilePic img {
+  aspect-ratio: 10/12;
+  object-fit: cover;
+  max-height: 70vh;
+  clip-path: circle(40%);
+}
+
+.introText {
+  margin-inline-start: 3rem;
+}
+
+.intro {
+  @include title-h3;
+}

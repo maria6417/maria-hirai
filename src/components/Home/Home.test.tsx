@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import App from './App';
+import Home from './Home';
 
 test('Does not explode', () => {
-  render(<App />);
+  render(<Home />);
 });

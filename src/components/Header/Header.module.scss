@@ -1,0 +1,52 @@
+@use '../../styles/utils' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid $color-main-pink;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  color: $color-dark-purple-grey;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  align-items: center;
+  font-size: 14px;
+}
+
+.header li {
+  padding: 0 1rem;
+}
+
+.number {
+  color: $color-main-pink;
+  font-weight: bold;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+}
+
+.button {
+  background-color: white;
+  color: var(--main-dark-pink);
+  border: 1px solid var(--main-dark-pink);
+  border-radius: 5px;
+  padding: 10px 15px;
+  transition: opacity 100ms ease-in-out;
+}
+
+.button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
